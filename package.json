@@ -1,0 +1,19 @@
+{
+  "name": "classwork-server",
+  "version": "1.0.0",
+  "description": "this is classwork for creating your own server with routes",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdmontDantes/6-3-2020-Classwork-Server.git"
+  },
+  "author": "Bogdan Kowaltchook",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdmontDantes/6-3-2020-Classwork-Server/issues"
+  },
+  "homepage": "https://github.com/EdmontDantes/6-3-2020-Classwork-Server#readme"
+}

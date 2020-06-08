@@ -19,8 +19,6 @@ const server = http.createServer((req, res) => {
             'Content-Type': 'text/plain',
         });
         res.end('No Route')
-        const readStream = fs.createReadStream(__dirname + '/index.html', 'utf8')
-        readStream.pipe(res);
     } else if (req.url === '/about') {
         res.writeHead(200, {
             'Content-Type': 'text/html',

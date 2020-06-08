@@ -14,28 +14,30 @@ const server = http.createServer((req, res) => {
         'Content-type':'application/json'
     });
 
-    if (req.url === '') {
-        res.writeHead(404, {
-            'Content-Type': 'text/plain',
+    if (req.url === '/') {
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
         });
-        res.end('No Route')
+        const readStream = fs.createReadStream(__dirname + '/index.html', 'utf8')
+        readStream.pipe(res);
+
     } else if (req.url === '/about') {
         res.writeHead(200, {
             'Content-Type': 'text/html',
         });
         const readStream = fs.createReadStream(__dirname + '/about.html', 'utf8')
         readStream.pipe(res);
+
     } else if (req.url === '/users') {
         res.writeHead(200, {
             'Content-Type': 'application/json'
         });
         res.end(JSON.stringify(users));
-    } else if (req.url === '/') {
-        res.writeHead(200, {
+    } else {
+        res.writeHead(404, {
             'Content-Type': 'text/html',
         });
-        const readStream = fs.createReadStream(__dirname + '/index.html', 'utf8')
-        readStream.pipe(res);
+        res.end('No Route')
     }
     console.log(req.url);
 });
